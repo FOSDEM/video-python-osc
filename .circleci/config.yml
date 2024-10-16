@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - run: apt-get update
-    - run: apt-get -y install build-essential git openssh-client dpkg-dev
+    - run: apt-get -y install build-essential git openssh-client dpkg-dev debhelper devscripts
     - checkout
     - run: make -f debian/rules binary
     - persist_to_workspace:

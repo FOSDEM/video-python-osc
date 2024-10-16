@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - run: apt-get update
-    - run: apt-get -y install build-essential git openssh-client dpkg-dev debhelper devscripts
+    - run: apt-get -y install build-essential git openssh-client dpkg-dev debhelper devscripts dh-python pybuild-plugin-pyproject python3-all python3-setuptools
     - checkout
     - run: make -f debian/rules binary
     - persist_to_workspace:

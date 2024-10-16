@@ -1,0 +1,26 @@
+Source: python-osc
+Section: python
+Priority: optional
+Build-Depends:
+ debhelper (>= 11~),
+ dh-python,
+ pybuild-plugin-pyproject,
+ debhelper-compat (= 12),
+ python3-all,
+ python3-setuptools,
+Testsuite: autopkgtest-pkg-pybuild
+Maintainer: Albert Stefanov <albert@kmail.bg>
+Standards-Version: 4.6.2
+
+Package: python3-osc
+X-Python3-Version: >= 3.10
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: Open Sound Control server and client implementations in **pure python**.
+ Features: 
+  * UDP blocking/threading/forking/asyncio server implementations
+  * UDP client
+  * int, int64, float, string, double, MIDI, timestamps, blob, nil OSC arguments
+  * simple OSC address<->callback matching system
+  * extensive unit test coverage
+  * basic client and server examples

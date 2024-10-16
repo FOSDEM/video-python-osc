@@ -34,8 +34,7 @@ jobs:
     - attach_workspace:
         at: .
     - run: gem install package_cloud
-    - run: mkdir -v -p release
-    - run: package_cloud push fosdem/video-team/debian/bookworm build/*deb
+    - run: package_cloud push fosdem/video-team/debian/bookworm /root/build/*deb
     - store_artifacts:
         path: release
     - persist_to_workspace:

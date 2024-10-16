@@ -76,12 +76,3 @@ workflows:
             only: /^v.*/
           branches:
             ignore: /.*/
-    - release:
-        requires:
-        - build
-        - package
-        filters:
-          tags:
-            only: /^v.*/
-          branches:
-            ignore: /.*/

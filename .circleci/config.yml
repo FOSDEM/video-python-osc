@@ -18,12 +18,14 @@ jobs:
     - run: apt-get -y install build-essential git openssh-client dpkg-dev debhelper dh-python pybuild-plugin-pyproject python3-all python3-setuptools
     - checkout
     - run: make -f debian/rules binary
+    - run: mkdir -p /root/build
+    - run: mv ../*.deb /root/build
     - persist_to_workspace:
-        root: /root
+        root: /root/build
         paths:
         - .
     - store_artifacts:
-        path: .
+        path: /root/build
 
   package:
     executor: ruby

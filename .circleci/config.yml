@@ -19,11 +19,11 @@ jobs:
     - checkout
     - run: make -f debian/rules binary
     - persist_to_workspace:
-        root: .
+        root: /root
         paths:
         - .
     - store_artifacts:
-        path: "../*.deb"
+        path: build
 
   package:
     executor: ruby

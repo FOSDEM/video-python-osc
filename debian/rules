@@ -3,4 +3,5 @@
 export PYBUILD_NAME=osc
 
 %:
+	./generate_release.sh
 	dh $@ --buildsystem=pybuild --with=python3

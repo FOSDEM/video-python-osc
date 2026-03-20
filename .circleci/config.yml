@@ -16,7 +16,7 @@ jobs:
     steps:
     - run: apt-get update
     - run: apt-get -y install build-essential git openssh-client dpkg-dev debhelper dh-python pybuild-plugin-pyproject python3-all python3-setuptools
-    - checkout
+    - run: git clone https://github.com/FOSDEM/video-python-osc.git .
     - run: ./generate_release.sh
     - run: make -f debian/rules binary
     - run: mkdir -p /root/build
